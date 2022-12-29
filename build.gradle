@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'org.playwright'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/com.microsoft.playwright/playwright
+    implementation 'com.microsoft.playwright:playwright:latest.release'
+    // https://mvnrepository.com/artifact/org.testng/testng
+    implementation 'org.testng:testng:7.7.0'
+
+
+}
+
+test {
+    useTestNG();
+}
