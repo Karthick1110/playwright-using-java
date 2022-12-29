@@ -17,12 +17,32 @@ dependencies {
 
 }
 
-task runPlaywrightCli(type: JavaExec) {
+task openRecorder(type: JavaExec) {
     mainClass = 'com.microsoft.playwright.CLI'
     classpath sourceSets.main.runtimeClasspath
     args 'open'
 }
 
+task openTraces(type: JavaExec){
+    mainClass = 'com.microsoft.playwright.CLI'
+    classpath sourceSets.main.runtimeClasspath
+    args  'show-trace trace.zip'
+}
+
 test {
     useTestNG();
+}
+
+tasks.register('hello'){
+
+    doLast{
+        println('Hello world....!!')
+    }
+}
+
+tasks.register('intro'){
+    dependsOn tasks.hello
+    doLast{
+        println(' Intro tasks')
+    }
 }
