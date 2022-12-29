@@ -1,2 +1,3 @@
 rootProject.name = 'using-java'
+println 'Reading the properties from settings.gradle'
 
