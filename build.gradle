@@ -15,7 +15,12 @@ dependencies {
     // https://mvnrepository.com/artifact/org.testng/testng
     implementation 'org.testng:testng:7.7.0'
 
+}
 
+task runPlaywrightCli(type: JavaExec) {
+    mainClass = 'com.microsoft.playwright.CLI'
+    classpath sourceSets.main.runtimeClasspath
+    args 'open'
 }
 
 test {
